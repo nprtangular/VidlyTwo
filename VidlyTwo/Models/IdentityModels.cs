@@ -20,6 +20,16 @@ namespace VidlyTwo.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        //^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*
+        //Aqui Agregamos los DbSet
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+
+        //^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

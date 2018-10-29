@@ -1,0 +1,65 @@
+﻿
+
+1	-	Los ViewModels nos sirven como en el ejemplo
+
+
+namespace VidlyTwo.ViewModel
+{
+    public class RandomMovieViewModel
+    {
+        public Movie Movie { get; set; }
+        public List<Customer> Customers { get; set; }
+
+    }
+}
+
+
+^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*
+^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*^~*
+
+2	-	En este ejemplo necesitamos bindear en una vista estos 2 objetos las peliculas y los clientes.
+		Pero como no se puede solo un objeto de la clase en este caso usamos ViewModel. En la vista Movies\Random.cshtml
+
+
+@model VidlyTwo.ViewModel.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{ 
+    var className = Model.Customers.Count > 0 ? "popular" : null;
+
+}
+
+<h2 class="@className">@Model.Movie.Name</h2>
+
+
+@if (Model.Customers.Count == 0)
+{
+    <p>No one has rented this movie before.</p>
+
+}
+else
+
+{
+    <ul>
+
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name</li>
+        }
+		      
+    </ul>
+
+}
+
+
+3	-	De tal manera que tenemos el @Model.Movie.Name y el @Model.Customers
+
+
+
+
+

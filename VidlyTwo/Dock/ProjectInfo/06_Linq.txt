@@ -1,0 +1,24 @@
+﻿
+Hay que agregar la referencia 
+using System.Data.Entity;
+
+cuando queramos hacer un Linq con una entidad de tipo navigation property
+
+public MembershipType MembershipType { get; set; }
+
+
+namespace VidlyTwo.Controllers
+{
+    public class CustomersController : Controller
+    {        
+        // GET: Customers
+        public ViewResult Index()
+        {
+            //  Add Reference System.Data.Entity
+            var customers = _context.Customers.Include(c=> c.MembershipType).ToList();
+
+            ViewBag.Customers = customers;
+
+            return View();
+
+        }

@@ -1,0 +1,12 @@
+﻿
+Type							HelperMethod
+			
+ViewResult						View()								Retorna solo la Vista
+PartialViewResult				PartialView()						Retorna una vista parcial
+ContentResult					Content()							Retorna solo un texto
+RedirectResult					Redirect()							Redirecciona a una ruta particular 
+RedirectToRouteResult			RedirectToAction()					Redirecciona cuando una accion a algun lugar
+JsonResult						Json()								Regresa un objeto serializado
+FileResult						File()								Regresa un archivo
+HttpNotFoundResult				HttpNotFound()						Regresa un 404 error
+EmptyResult						

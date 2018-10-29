@@ -1,0 +1,39 @@
+﻿
+
+
+
+
+1	-	Creamos un Proyecto y Seleccionamos Autentificacion Usuarios Individuales de Tipo MVC
+2	-	Abrimos Consola de Administrador de Paquetes
+3	-	Habilitamos Migrations.		enable-migrations
+4	-	Nos debe Crear la Carpeta de Migrations
+
+5	-	add-migration InitialModel. Hacemos esto para que nos Cree el DbContext
+		Esta nos crea solito en la Carpeta Models 3 Archivos.
+		El que dice IdentityModel es el que nos Genera los DbSets
+
+		Este compa va a ser el responsable de detectar clases automaticamente
+
+
+6	-	Abrimos Models/IdentityModels
+		Arribita de ApplicationDbContext() pones los DbSets Correspondientes a los Modelos que tengamos
+
+7	-	Ya que los Agregamos
+
+8	-	en Consola de Administrador de Paquetes reiniciamos
+		add-migrations InitialModel -force
+
+9	-	update-database
+
+10	-	le damos click al boton arriba alado de la llave (mostrar todo)
+		Vemos que creo una carpeta llamada App_Data
+
+
+11	-	En ningun momento instalamos EF
+
+12	-	Vamos Agregando Chiquiteado de 1 propiedad en 1 y le damos commit
+		Seguido de su update-database
+
+
+
+

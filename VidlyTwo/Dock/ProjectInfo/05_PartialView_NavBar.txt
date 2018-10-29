@@ -1,0 +1,2 @@
+﻿Podemos en _Layout invocar un partial view de el navbar por ejemplo
+

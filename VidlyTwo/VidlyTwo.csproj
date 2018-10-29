@@ -190,20 +190,67 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810260656366_InitialModel.cs" />
+    <Compile Include="Migrations\201810260656366_InitialModel.Designer.cs">
+      <DependentUpon>201810260656366_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260704367_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201810260704367_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201810260704367_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260714555_AddMembershipType.cs" />
+    <Compile Include="Migrations\201810260714555_AddMembershipType.Designer.cs">
+      <DependentUpon>201810260714555_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260717208_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201810260717208_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201810260717208_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810260741542_ApplyDataAnnotations.cs" />
+    <Compile Include="Migrations\201810260741542_ApplyDataAnnotations.Designer.cs">
+      <DependentUpon>201810260741542_ApplyDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810290241400_AgregarDatetimeaCustomer.cs" />
+    <Compile Include="Migrations\201810290241400_AgregarDatetimeaCustomer.Designer.cs">
+      <DependentUpon>201810290241400_AgregarDatetimeaCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810290356053_Agregar1233.cs" />
+    <Compile Include="Migrations\201810290356053_Agregar1233.Designer.cs">
+      <DependentUpon>201810290356053_Agregar1233.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810290358421_Agregar1236.cs" />
+    <Compile Include="Migrations\201810290358421_Agregar1236.Designer.cs">
+      <DependentUpon>201810290358421_Agregar1236.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\NewCustomerViewModel.cs" />
+    <Compile Include="ViewModel\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Dock\GitHubRepositoryTeacher.txt" />
+    <Content Include="Dock\ProjectInfo\01_CrearProyecto_CodeFirstMigrationtsDock.txt" />
+    <Content Include="Dock\ProjectInfo\03_ControllerDock.txt" />
+    <Content Include="Dock\ProjectInfo\05_PartialView_NavBar.txt" />
+    <Content Include="Dock\ProjectInfo\04_ViewModelDock.txt" />
+    <Content Include="Dock\ProjectInfo\02_NavigationProperty.txt" />
+    <Content Include="Dock\ProjectInfo\06_Linq.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,6 +305,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +326,32 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810260656366_InitialModel.resx">
+      <DependentUpon>201810260656366_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260704367_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201810260704367_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260714555_AddMembershipType.resx">
+      <DependentUpon>201810260714555_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260717208_PopulateMembershipTypes.resx">
+      <DependentUpon>201810260717208_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810260741542_ApplyDataAnnotations.resx">
+      <DependentUpon>201810260741542_ApplyDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810290241400_AgregarDatetimeaCustomer.resx">
+      <DependentUpon>201810290241400_AgregarDatetimeaCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810290356053_Agregar1233.resx">
+      <DependentUpon>201810290356053_Agregar1233.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810290358421_Agregar1236.resx">
+      <DependentUpon>201810290358421_Agregar1236.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
