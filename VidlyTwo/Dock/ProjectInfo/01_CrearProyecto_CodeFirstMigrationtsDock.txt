@@ -21,9 +21,14 @@
 7	-	Ya que los Agregamos
 
 8	-	en Consola de Administrador de Paquetes reiniciamos
-		add-migrations InitialModel -force
+		*************************************************
+		add-migration InitialModel -force
+		*************************************************
 
+
+		*************************************************
 9	-	update-database
+		*************************************************
 
 10	-	le damos click al boton arriba alado de la llave (mostrar todo)
 		Vemos que creo una carpeta llamada App_Data

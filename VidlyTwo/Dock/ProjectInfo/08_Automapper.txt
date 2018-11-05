@@ -1,0 +1,9 @@
+﻿1)	Para usar el Automapper instalamos
+	Nugget Package Manager
+	Instalamos automapper Version 4.1 y la nueva la 7 las 2
+
+
+2)	Creamos un archivo llamado 
+	App_Start/MappingProfile
+
+
